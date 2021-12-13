@@ -10,7 +10,8 @@
         <div class="container">
           <ul>
             <li v-for="(link, index) in links" :key="index">
-              <img v-bin:src="link.image" :alt="link.text">
+              <img :src="link.image" :alt="link.text">
+              <img src="../assets/img/buy-comics-digital-comics.png" :alt="link.text">
               <a :href="link.url">
                 {{link.text.toUpperCase()}}
               </a>
@@ -76,6 +77,12 @@ export default {
     }
     .paneContent{
       background-color: $blueDC;
+      
+      ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 
