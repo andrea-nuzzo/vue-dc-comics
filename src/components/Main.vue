@@ -10,9 +10,8 @@
         <div class="container">
           <ul>
             <li v-for="(link, index) in links" :key="index">
-              <img :src="link.image" :alt="link.text">
-              <img src="../assets/img/buy-comics-digital-comics.png" :alt="link.text">
               <a :href="link.url">
+                <img :src="link.image" :alt="link.text">
                 {{link.text.toUpperCase()}}
               </a>
             </li>
@@ -24,6 +23,14 @@
 </template>
 
 <script>
+import digitalComics from "../assets/img/buy-comics-digital-comics.png";
+import dcmerchandise from "../assets/img/buy-comics-merchandise.png";
+import subscription from "../assets/img/buy-comics-subscriptions.png";
+import comicshoplocator from "../assets/img/buy-comics-shop-locator.png";
+import dcpowervisa from "../assets/img/buy-dc-power-visa.svg";
+
+
+
 export default {
     name: 'Main',
     data(){
@@ -31,27 +38,27 @@ export default {
         links:[
           {
             text: "digital comics",
-            image: "../assets/img/buy-comics-digital-comics.png",
+            image: digitalComics,
             url: "#",
           },
           {
             text: "dc merchandise",
-            image:"../assets/img/buy-comics-merchandise.png",
+            image: dcmerchandise,
             url: "#",
           },
           {
             text: "subscription",
-            image:"../assets/img/buy-comics-subscriptions.png",
+            image: subscription,
             url: "#",
           },
           {
             text: "comic shop locator",
-            image:"../assets/img/buy-comics-shop-locator.png",
+            image:comicshoplocator,
             url: "#",
           },
           {
             text: "dc power visa",
-            image:"../assets/img/buy-dc-power-visa.svg",
+            image: dcpowervisa,
             url: "#",
           },    
         ],
@@ -77,11 +84,29 @@ export default {
     }
     .paneContent{
       background-color: $blueDC;
-      
+
       ul{
         display: flex;
         justify-content: center;
         align-items: center;
+
+          li{
+          list-style: none;
+
+            a {
+              
+                img{
+                  width: 50px;
+                  margin-right: 20px ;
+                }
+
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: white;
+                margin: 30px 30px;
+            }
+          }
       }
     }
   }
