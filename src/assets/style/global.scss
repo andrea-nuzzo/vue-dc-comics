@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+
 
 // *** <--- RESET ---> ***
 *{
@@ -9,5 +11,6 @@
 // *** <--- CONTAINER ---> ***
 .container{
     margin: 0 auto;
-    width: 60%;
+    max-width: 80%;
+    font-family: 'Open Sans Condensed', sans-serif;
 }

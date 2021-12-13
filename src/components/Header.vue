@@ -1,18 +1,21 @@
 <template>
-  <header>
-      <div class="container">
-        <div class="logo">
-            <img src="../assets/img/dc-logo.png" alt="">
+    <header>
+
+        <div class="container">
+            <div class="logo">
+                <img src="../assets/img/dc-logo.png" alt="">
+            </div>
+
+            <nav>
+                <ul>
+                    <li v-for="(link, index) in links" :key="index">
+                        <a :href="link.url">{{link.text.toUpperCase()}}</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
 
-        <nav>
-            <ul>
-                <li v-for="(link, index) in links" :key="index"><a :href="links.url">{{link.text}}</a></li>
-
-            </ul>
-        </nav>
-      </div>
-  </header>
+    </header>
 </template>
 
 <script>
@@ -97,14 +100,33 @@ export default {
 <style lang="scss" scope>
     @import '../assets/style/colorPalette.scss';
     header{
-        height: 90px;
 
-        .container {
+        .container{
+            height: 90px;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
         img{
             width: 60px;
-        };
+        }
+
+        ul {
+            display: flex;
+
+            li{
+                list-style: none;
+                border: 1px solid red;
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-weight: bold;
+                    margin: 0 20px;
+                    border: 1px solid black;
+                }
+            }
+        }
 
         border: 1px solid $blueDC;
     }
