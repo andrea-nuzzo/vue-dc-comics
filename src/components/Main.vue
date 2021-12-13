@@ -4,20 +4,21 @@
       <div class="content">
         <div>Content goes here</div>   
       </div>
+    </div>
 
       <div class="paneContent">
-        <ul>
-
-          <li v-for="(link, index) in links" :key="index">
-            <img v-bin:src="link.image" :alt="link.text">
-            <a :href="link.url">
-              {{link.text.toUpperCase()}}
-            </a>
-          </li>
-
-        </ul>
+        <div class="container">
+          <ul>
+            <li v-for="(link, index) in links" :key="index">
+              <img v-bin:src="link.image" :alt="link.text">
+              <a :href="link.url">
+                {{link.text.toUpperCase()}}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+
   </main>
 </template>
 
@@ -72,6 +73,9 @@ export default {
       font-weight: bolder;
       display: flex;
       align-items: center;
+    }
+    .paneContent{
+      background-color: $blueDC;
     }
   }
 
