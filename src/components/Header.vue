@@ -117,13 +117,11 @@ export default {
 
             li{
                 list-style: none;
-                border: 1px solid red;
                 a {
                     text-decoration: none;
                     color: black;
                     font-weight: bold;
                     margin: 0 20px;
-                    border: 1px solid black;
                 }
             }
         }
