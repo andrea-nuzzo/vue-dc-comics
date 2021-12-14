@@ -102,26 +102,44 @@ export default {
     header{
 
         .container{
-            height: 90px;
+            height: 115px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         img{
-            width: 60px;
+            width: 81px;
         }
 
-        ul {
-            display: flex;
+        nav{
+            height: 100%;
 
-            li{
-                list-style: none;
-                a {
-                    text-decoration: none;
-                    color: black;
-                    font-weight: bold;
-                    margin: 0 20px;
+            ul {
+                height: 100%;
+
+                li{
+                    list-style: none;
+                    display: inline-block;
+                    height: 100%;
+                    line-height: 115px;
+
+
+                    &:hover {
+                    border-bottom: solid 5px $blueDC;  
+                    transition: transform 300ms ;
+
+                    &:hover a{
+                        color: $blueDC;
+                    }
+                }
+                    
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        font-weight: bold;
+                        margin: 0 20px;
+                    }
                 }
             }
         }
