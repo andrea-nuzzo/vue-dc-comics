@@ -3,10 +3,9 @@
     <!-- //Jumbotron-->
     <div class="jumbotron"></div>
 
-    
-
+    <!-- //Conteiner immagini -->
     <div class="container">
-      <!-- //Conteiner immagini -->
+      
       <span class="currentSeries">
         CURRENT SERIES
       </span>
@@ -15,6 +14,14 @@
       <div class="comics">
         <CardComics v-for="(comicBook, index) in comics" :key="index" :comicBook="comicBook"/>
       </div>
+
+      <div class="load">
+        <span class="btnLoad">
+          LOAD MORE
+        </span>
+      </div>
+
+
     </div>
   </main>
 </template>
@@ -140,12 +147,25 @@ main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 50px 0;
+    padding: 40px 0 10px 0;
 
     & > * {
       width: calc(100% / 6);
       margin-bottom: 30px;
       color: white;
+    }
+  }
+
+  .load{
+    text-align: center;
+    padding-bottom: 30px;
+
+    .btnLoad{
+      color: white;
+      background-color: $blueDC;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 20px;
     }
   }
 }
