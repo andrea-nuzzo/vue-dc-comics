@@ -39,20 +39,17 @@
       </div>
     </div>
 
-    <!-- <div class="social">
+    <div class="social">
       <div class="container">
         <div class="btn">SIGN-UP NOW!</div>
 
         <div class="socialMEdia">
           <div>FOLLOW US</div>
-          <img src="../assets/img/footer-facebook.png" alt="" />
-          <img src="../assets/img/footer-twitter.png" alt="" />
-          <img src="../assets/img/footer-youtube.png" alt="" />
-          <img src="../assets/img/footer-pinterest.png" alt="" />
-          <img src="../assets/img/footer-periscope.png" alt="" />
+          <img v-for="(element, index) in socialMedia" :key="index" :src="element.img" :alt="element.name">
         </div>
       </div>
-    </div> -->
+    </div>
+
   </footer>
 </template>
 
@@ -89,6 +86,7 @@ export default {
           url: "#",
         },
       ],
+
       linksMenuFooter: [
         {
           title: "dc comics",
@@ -133,6 +131,30 @@ export default {
           link: ["Shop DC", "Shop DC Collectibles"],
         },
       ],
+
+      socialMedia:[
+        {
+          name:'facebook',
+          img:require("../assets/img/footer-facebook.png"),
+        },
+        {
+          name:'twitter',
+          img:require("../assets/img/footer-twitter.png"),
+        },
+        {
+          name:'youtube',
+          img:require("../assets/img/footer-youtube.png"),
+        },
+        {
+          name:'pinterest',
+          img:require("../assets/img/footer-pinterest.png"),
+        },
+        {
+          name:'periscope',
+          img:require("../assets/img/footer-periscope.png"),
+        },
+        
+      ]
     };
   },
 };
@@ -145,6 +167,7 @@ footer {
 
   .menuBuyBar {
     background-color: $blueDC;
+    z-index: 2;
 
     ul {
       display: flex;
@@ -155,10 +178,13 @@ footer {
         list-style: none;
 
         a {
+          height:  55px;
+
           img {
-            height: 10%;
+            height: 100%;
             margin-right: 20px;
           }
+
 
           display: flex;
           align-items: center;
@@ -174,11 +200,14 @@ footer {
     background-image: url("../assets/img/footer-bg.jpg");
     background-size: cover;
     background-position: center;
+    position: relative;
+    z-index: -1;
 
     .container {
       display: flex;
       justify-content: space-between;
     }
+    // MENU FOOTER CON LINK
     .menuFooter {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -223,13 +252,19 @@ footer {
       grid-row: 1/3;
     }
 
+
     .logoBig img {
-      width: 350px;
+      z-index: 0;
+      position: absolute;
+      right: 300px;
+      bottom: -40px;
+      width: 450px;
     }
   }
 
   .social {
     background-color: $grayBackground;
+    z-index: 2;
 
     .container {
       display: flex;
