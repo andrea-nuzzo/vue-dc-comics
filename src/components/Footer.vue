@@ -1,6 +1,19 @@
 <template>
   <footer>
       <div class="backgroundImage">
+
+         <div class="paneContent">
+        <div class="container">
+          <ul>
+            <li v-for="(link, index) in links" :key="index">
+              <a :href="link.url">
+                <img :src="link.image" :alt="link.text">
+                {{link.text.toUpperCase()}}
+              </a>
+            </li>
+          </ul>
+        </div>
+
         <div class="container">
           <div class="nav">
             <ul class="item1">
@@ -49,9 +62,11 @@
           </div>
         </div>
       </div>
+    </div>
       <div class="social">
         <div class="container">
           <div class="btn">SIGN-UP NOW!</div>
+        
 
           <div class="socialMEdia">
             <div>FOLLOW US</div>
@@ -71,7 +86,38 @@
 export default {
     name: 'Footer',
 
-  
+    data(){
+      return{
+
+        links:[
+          {
+            text: "digital comics",
+            image: require("../assets/img/buy-comics-digital-comics.png"),
+            url: "#",
+          },
+          {
+            text: "dc merchandise",
+            image: require("../assets/img/buy-comics-merchandise.png"),
+            url: "#",
+          },
+          {
+            text: "subscription",
+            image: require("../assets/img/buy-comics-subscriptions.png"),
+            url: "#",
+          },
+          {
+            text: "comic shop locator",
+            image: require("../assets/img/buy-comics-shop-locator.png"),
+            url: "#",
+          },
+          {
+            text: "dc power visa",
+            image: require("../assets/img/buy-dc-power-visa.svg"),
+            url: "#",
+          },    
+        ],
+      }
+    }
 
 }
 </script>
@@ -80,6 +126,33 @@ export default {
   @import '../assets/style/colorPalette.scss';
   footer{
     height: 100px;
+        .paneContent{
+      background-color: $blueDC;
+
+      ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+          li{
+          list-style: none;
+
+            a {
+              
+                img{
+                  width: 50px;
+                  margin-right: 20px ;
+                }
+
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: white;
+                margin: 30px 30px;
+            }
+          }
+      }
+    }
     .backgroundImage{
 
       background-image: url('../assets/img/footer-bg.jpg');
