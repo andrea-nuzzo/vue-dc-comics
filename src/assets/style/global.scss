@@ -14,3 +14,13 @@
     max-width: 80%;
     font-family: 'Open Sans Condensed', sans-serif;
 }
+
+//*** <--- RESET <a> AND <li> ---> ***
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}

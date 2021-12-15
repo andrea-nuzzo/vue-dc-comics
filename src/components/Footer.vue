@@ -1,5 +1,6 @@
 <template>
   <footer>
+  
     <!-- Menu buyer con immagini  -->
     <div class="menuBuyBar">
       <div class="container">
@@ -175,7 +176,6 @@ footer {
       align-items: center;
 
       li {
-        list-style: none;
 
         a {
           height:  55px;
@@ -188,7 +188,6 @@ footer {
 
           display: flex;
           align-items: center;
-          text-decoration: none;
           color: white;
           margin: 30px 30px;
         }
@@ -229,7 +228,6 @@ footer {
         & > *{
           list-style: none;
           a{
-            text-decoration: none;
             color: #959595;
 
             &:hover{
