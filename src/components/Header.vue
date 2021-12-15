@@ -48,12 +48,12 @@ export default {
                 {
                     link:"https://community.dcuniverseinfinite.com",
                     img:"https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/DC_community.svg",
-                    dimension: "80",
+                    dimension: "82.5",
                 },
                 {
                     link:"https://www.hbomax.com/hub/dc?utm_source=dccomics&utm_medium=nav&utm_campaign=dcglobalnav",
                     img:"https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/DC_on_HBOMAX_desktop.svg",
-                    dimension: "125",
+                    dimension: "140",
                 },
             ],
 
@@ -139,63 +139,23 @@ export default {
             background-color: $blueDC;
             display: flex;
             justify-content: flex-end;
+            align-items: center;
 
+            .obliqueSquare{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 180px;
+                transform: skewX(-25deg);
+                
+                border: 1px solid red;
+                img{
+                    transform: skewX(25deg);
+                }
+            }
 
-            // Parte obliqua prima di ogni rettangolo
-            div.obliqueSquare::before{
-            content: '';
-            width: 20px;
-            height: 100%;
-            position: absolute;
-            transform: skewX(-25deg);
-            bottom: 0px;
-            left: -10px;
-            background:$blueDC;
-            }
-            // Il primo rettangolo deve essere bianco (questo è il before bianco)
-            div.obliqueSquare:first-child::before{
-                background-color: white;
-            }
-            //Rettangoli che conterranno le immagini
-            div.obliqueSquare {
-            width: 140px;
-            height: 40px;
-            position: relative;
-            background: $blueDC;
-            text-align: center;
-            line-height: 50px;
-            margin-right: 20px;
-            }
             
-            // Questo è la parte centrale del primo rettangolo
-            div.obliqueSquare:first-child{ 
-                background-color: white;
-                border: none;
-                line-height: 60px;
-            }
 
-            //L'ultimo rettangolo non deve finire obliquo ma a 90deg pertanto
-            div.obliqueSquare:not(:last-child)::after{
-            content: '';
-            width: 20px;
-            height: 100%;
-            position: absolute;
-            transform: skewX(-25deg);
-            border-right: 1px solid #3797F6;
-            top: 0px;
-            right: -10px;
-            background: $blueDC;
-            }
-            
-            // a questo punto lo rendo delle stesse dimensioni degli altri e elimino il margine destro
-            div.obliqueSquare:last-child{
-                width: 160px;
-                margin-right: 0px;
-            }
-
-            div.obliqueSquare:first-child::after{
-                background-color: white;
-            }
             
         }
         // *** STOP SECTION TOP HEADER *** 
