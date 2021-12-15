@@ -3,7 +3,7 @@
 
         <div class="topHeaderMenu">
             <div class="obliqueSquare" v-for="(item, index) in dataHeaderTop" :key="index">
-                <a :href="item.link"><img :src="item.img" :width="item.dimension" :alt="index"></a>
+                <a :href="item.link"><img :src="item.img"  :alt="index"></a>
             </div>
         </div>
 
@@ -32,28 +32,23 @@ export default {
             dataHeaderTop:[
                 {
                     link:"https://www.dcuniverseinfinite.com",
-                    img: "https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/DC_desktop_blue.svg",
-                    dimension: "30", 
+                    img: "https://upload.wikimedia.org/wikipedia/commons/3/3d/DC_Comics_logo.svg",
                 },
                 {
                     link: "https://www.dcuniverseinfinite.com/?_ga=2.78271380.1495375928.1639472812-5255609.1639472812",
-                    img: "https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/DC_SHOP_desktop.svg",
-                    dimension: "50",
+                    img: "https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/DCUI_desktop.svg",
                 },
                 {
                     link: "https://shop.dccomics.com",
                     img: "https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/DC_SHOP_desktop.svg",
-                    dimension: "50",
                 },
                 {
                     link:"https://community.dcuniverseinfinite.com",
                     img:"https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/DC_community.svg",
-                    dimension: "82.5",
                 },
                 {
                     link:"https://www.hbomax.com/hub/dc?utm_source=dccomics&utm_medium=nav&utm_campaign=dcglobalnav",
                     img:"https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/DC_on_HBOMAX_desktop.svg",
-                    dimension: "140",
                 },
             ],
 
@@ -141,22 +136,32 @@ export default {
             justify-content: flex-end;
             align-items: center;
 
+            .obliqueSquare:first-child{
+                background-color: white;
+            }
+            
             .obliqueSquare{
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                height: 40px;
                 width: 180px;
-                transform: skewX(-25deg);
+                transform: skewX(-15deg);
                 
-                border: 1px solid red;
+                &:hover:not(:first-child){
+                    background-color: #3797F6;
+                }
+
                 img{
-                    transform: skewX(25deg);
+                    transform: skewX(15deg);
+                    height: 25px;
+                    object-fit: cover;
                 }
             }
 
-            
-
-            
+            .obliqueSquare:not(:last-child){
+                border-right: 1px solid #3797F6;
+            }
         }
         // *** STOP SECTION TOP HEADER *** 
 
